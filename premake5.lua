@@ -1,7 +1,6 @@
 project "glfw"
 	kind "StaticLib"
 	language "C"
-	staticruntime "on"
 	warnings "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -31,6 +30,7 @@ project "glfw"
 		pic "On"
 
 		systemversion "latest"
+		staticruntime "on"
 		
 		files
 		{
@@ -56,6 +56,8 @@ project "glfw"
 	filter "system:macosx"
 		pic "On"
 
+		staticruntime "on"
+		
 		files
 		{
 			"src/cocoa_init.m",
@@ -77,6 +79,7 @@ project "glfw"
 
 	filter "system:windows"
 		systemversion "latest"
+		staticruntime "on"
 
 		files
 		{
